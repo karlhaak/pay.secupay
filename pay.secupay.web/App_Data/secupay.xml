@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TPaySecupayConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Username>pay.secupay</Username>
+  <ConnectionString>data source=localhost;initial catalog=Secupay;integrated security=False;user id=secupay;password=secupay;multipleactiveresultsets=True;application name=EntityFramework</ConnectionString>
+  <ApiKey>133cb4492ced4f3f95a0b8e2823e301d</ApiKey>
+  <ApiVersion>2.11</ApiVersion>
+  <Shop>pay.secupay</Shop>
+  <Demo>0</Demo>
+  <SecupayUrl>https://api-dist.secupay-ag.de</SecupayUrl>
+  <UrlSuccess>http://www.shop.de/pay.secupay.web/success.aspx</UrlSuccess>
+  <UrlFailure>http://www.shop.de/pay.secupay.web/failure.aspx</UrlFailure>
+  <UrlPush>http://www.shop.de/pay.secupay.web/push.ashx</UrlPush>
+</TPaySecupayConfig>

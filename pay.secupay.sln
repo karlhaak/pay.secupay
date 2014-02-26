@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pay.secupay", "pay.secupay\pay.secupay.csproj", "{C34F12B1-EF6C-4527-9A15-B39376BAA08C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pay.secupay.test", "pay.secupay.test\pay.secupay.test.csproj", "{46765640-8849-4346-8494-0F0BF5559960}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "pay.secupay.web", "http://localhost/pay.secupay.web", "{1AFF7F50-B4BB-41AF-9280-E9CA0233BF93}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "false"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{c34f12b1-ef6c-4527-9a15-b39376baa08c}|pay.secupay.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/pay.secupay.web"
+		Debug.AspNetCompiler.PhysicalPath = "pay.secupay.web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\pay.secupay.web\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/pay.secupay.web"
+		Release.AspNetCompiler.PhysicalPath = "pay.secupay.web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\pay.secupay.web\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "pay.secupay.web\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C34F12B1-EF6C-4527-9A15-B39376BAA08C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C34F12B1-EF6C-4527-9A15-B39376BAA08C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C34F12B1-EF6C-4527-9A15-B39376BAA08C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C34F12B1-EF6C-4527-9A15-B39376BAA08C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46765640-8849-4346-8494-0F0BF5559960}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46765640-8849-4346-8494-0F0BF5559960}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46765640-8849-4346-8494-0F0BF5559960}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46765640-8849-4346-8494-0F0BF5559960}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AFF7F50-B4BB-41AF-9280-E9CA0233BF93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AFF7F50-B4BB-41AF-9280-E9CA0233BF93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AFF7F50-B4BB-41AF-9280-E9CA0233BF93}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AFF7F50-B4BB-41AF-9280-E9CA0233BF93}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

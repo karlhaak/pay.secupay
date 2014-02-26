@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C34F12B1-EF6C-4527-9A15-B39376BAA08C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>pay.secupay</RootNamespace>
+    <AssemblyName>pay.secupay</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Mapping\PaySecupayDeliveryAddressMap.cs" />
+    <Compile Include="Model\Partial\PaySecupayDeliveryAddress.cs" />
+    <Compile Include="Model\PaySecupayDeliveryAddress.cs" />
+    <Compile Include="Model\Dto\InitRequestDtoDeliveryAddress.cs" />
+    <Compile Include="Model\Mapping\PaySecupayBasketMap.cs" />
+    <Compile Include="Model\Partial\PaySecupayBasket.cs" />
+    <Compile Include="Model\PaySecupayBasket.cs" />
+    <Compile Include="Model\Dto\InitRequestDtoBasket.cs" />
+    <Compile Include="Model\Mapping\PaySecupayPushMap.cs" />
+    <Compile Include="Model\Partial\PaySecupayPush.cs" />
+    <Compile Include="Model\PaySecupayPush.cs" />
+    <Compile Include="TPayFactory.cs" />
+    <Compile Include="Model\Mapping\PaySecupayStatusMap.cs" />
+    <Compile Include="Model\Partial\PaySecupayStatus.cs" />
+    <Compile Include="Model\PaySecupayStatus.cs" />
+    <Compile Include="Model\Dto\StatusResponseDtoData.cs" />
+    <Compile Include="Model\Dto\StatusRequestDtoData.cs" />
+    <Compile Include="Model\Dto\StatusResponseDtoRoot.cs" />
+    <Compile Include="Model\Dto\StatusRequestDtoRoot.cs" />
+    <Compile Include="Model\Dto\InitResponseDtoData.cs" />
+    <Compile Include="Model\Dto\InitResponseDtoRoot.cs" />
+    <Compile Include="EnumPaymentType.cs" />
+    <Compile Include="Model\Dto\InitRequestDtoData.cs" />
+    <Compile Include="Model\Dto\InitRequestDtoRoot.cs" />
+    <Compile Include="Model\Dto\GetTypesResponseDtoRoot.cs" />
+    <Compile Include="Model\Dto\GetTypesRequestDtoData.cs" />
+    <Compile Include="Model\Dto\GetTypesRequestDtoRoot.cs" />
+    <Compile Include="Model\Dto\IPaySecupayDto.cs" />
+    <Compile Include="EnumPaymentAction.cs" />
+    <Compile Include="TDtoFactory.cs" />
+    <Compile Include="TJson.cs" />
+    <Compile Include="Model\Mapping\PaySecupayInitMap.cs" />
+    <Compile Include="Model\Partial\PaySecupayInit.cs" />
+    <Compile Include="TPaySecupayExtend.cs" />
+    <Compile Include="Model\PaySecupayInit.cs" />
+    <Compile Include="Model\Mapping\PaySecupayGetTypesMap.cs" />
+    <Compile Include="Model\Mapping\PaySecupayBaseMap.cs" />
+    <Compile Include="Model\Partial\PaySecupayGetTypes.cs" />
+    <Compile Include="Model\Partial\IPaySecupay.cs" />
+    <Compile Include="Model\PaySecupayContext.cs" />
+    <Compile Include="Model\Partial\PaySecupayBase.cs" />
+    <Compile Include="Model\PaySecupayGetTypes.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TPaySecupayConfig.cs" />
+    <Compile Include="TPaySecupayManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\secupay-db-create.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
