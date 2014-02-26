@@ -24,59 +24,66 @@
         [TestMethod]
         public void TestManagerInit()
         {
-            TPaySecupayConfig config = TPaySecupayConfig.LoadFromFile(ConfigFileName);
+// config einladen
+TPaySecupayConfig config = TPaySecupayConfig.LoadFromFile(ConfigFileName);
 
-            PaySecupayInit secupayInit = new TPayFactory(config).CreateSecupayInit(1.23m);
+// Über Factory paySecupayInit Objekt erzeugen
+PaySecupayInit secupayInit = new TPayFactory(config).CreateSecupayInit(1.23m);
 
-            secupayInit.Firstname = "Karl";
-            secupayInit.Lastname = "Mustermann";
-            secupayInit.Langauge = "DE";
-            secupayInit.Street = "Hauptstrasse";
-            secupayInit.Housenumber = "12";
-            secupayInit.Zip = "50000";
-            secupayInit.City = "Köln";
-            secupayInit.Telephone = "000-111222555";
-            secupayInit.Email = "";
-            secupayInit.PaymentAction = EnumPaymentAction.sale.ToString();
-            secupayInit.PaymentType = EnumPaymentType.creditcard.ToString();
+// Daten aus Verkauf übertragen
+secupayInit.Firstname = "Karl";
+secupayInit.Lastname = "Mustermann";
+secupayInit.Langauge = "DE";
+secupayInit.Street = "Hauptstrasse";
+secupayInit.Housenumber = "12";
+secupayInit.Zip = "50000";
+secupayInit.City = "Köln";
+secupayInit.Telephone = "000-111222555";
+secupayInit.Email = "";
+secupayInit.PaymentAction = EnumPaymentAction.sale.ToString();
+secupayInit.PaymentType = EnumPaymentType.creditcard.ToString();
 
-            secupayInit.Basket.Add(new PaySecupayBasket
-            {
-                Name = "Item1",
-                ArticleNumber = "01-1111",
-                Ean = "11111111111111111",
-                Model = "Model",
-                Price = "100",
-                Quantity = "1",
-                Tax = "19",
-                Total = "100",
-            }.SetNew(config.Username));
 
-            // set delivery address
-            secupayInit.DeliveryAddress = new PaySecupayDeliveryAddress
-            {
-                Firstname = secupayInit.Firstname,
-                Lastname = secupayInit.Lastname,
-                Company = secupayInit.Company,
-                Street = secupayInit.Street,
-                Housenumber = secupayInit.Housenumber,
-                Zip = secupayInit.Zip,
-                City = secupayInit.City,
-                Country = secupayInit.Country
-            }.SetNew(config.Username);
+// Inhalt des Warenkorbs anfügen
+secupayInit.Basket.Add(new PaySecupayBasket
+{
+    Name = "Item1",
+    ArticleNumber = "01-1111",
+    Ean = "11111111111111111",
+    Model = "Model",
+    Price = "1.23",
+    Quantity = "1",
+    Tax = "19",
+    Total = "100",
+}.SetNew(config.Username));
 
-            var man = new TPaySecupayManager(config);
-            man.InitPayment(secupayInit);
+// Lieferadresse übergeben
+secupayInit.DeliveryAddress = new PaySecupayDeliveryAddress
+{
+    Firstname = secupayInit.Firstname,
+    Lastname = secupayInit.Lastname,
+    Company = secupayInit.Company,
+    Street = secupayInit.Street,
+    Housenumber = secupayInit.Housenumber,
+    Zip = secupayInit.Zip,
+    City = secupayInit.City,
+    Country = secupayInit.Country
+}.SetNew(config.Username);
 
-            Process.Start(secupayInit.ResponseIFrameUrl);
+// Payment beim Gateway anfordern --> Hash und IFrame Url werden geliefert
+var man = new TPaySecupayManager(config);
+man.InitPayment(secupayInit);
+
+Process.Start(secupayInit.ResponseIFrameUrl);
         }
 
         [TestMethod]
         public void TestManagerStatus()
         {
             TPaySecupayConfig config = TPaySecupayConfig.LoadFromFile(ConfigFileName);
-            PaySecupayStatus secupayStatus = new TPayFactory(config).CreateSecupayStatus("hashcode");
-                // TODO: insert hashcode here
+
+            // TODO: insert hashcode here
+            PaySecupayStatus secupayStatus = new TPayFactory(config).CreateSecupayStatus("hashcode"); 
             var man = new TPaySecupayManager(config);
             man.StatusPayment(secupayStatus);
         }

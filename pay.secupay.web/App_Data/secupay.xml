@@ -7,7 +7,7 @@
   <Shop>pay.secupay</Shop>
   <Demo>0</Demo>
   <SecupayUrl>https://api-dist.secupay-ag.de</SecupayUrl>
-  <UrlSuccess>http://www.shop.de/pay.secupay.web/success.aspx</UrlSuccess>
-  <UrlFailure>http://www.shop.de/pay.secupay.web/failure.aspx</UrlFailure>
-  <UrlPush>http://www.shop.de/pay.secupay.web/push.ashx</UrlPush>
+  <UrlSuccess>http://www.ihre-shop-domain.de/pay.secupay.web/success.aspx</UrlSuccess>
+  <UrlFailure>http://www.ihre-shop-domain.de/pay.secupay.web/failure.aspx</UrlFailure>
+  <UrlPush>http://www.ihre-shop-domain.de/pay.secupay.web/push.ashx</UrlPush>
 </TPaySecupayConfig>
