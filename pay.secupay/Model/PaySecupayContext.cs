@@ -40,7 +40,7 @@ namespace pay.secupay.Model
                     if (ent.State == EntityState.Modified)
                     {
                         paySecupayEntity.ChangedAt = DateTime.Now;
-                        paySecupayEntity.CreatedBy = Username;
+                        paySecupayEntity.ChangedBy = Username;
                     }
                 }
             }

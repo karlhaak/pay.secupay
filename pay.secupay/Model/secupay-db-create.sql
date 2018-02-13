@@ -1,9 +1,9 @@
 create table [dbo].[PaySecupayBasket] (
     [PaySecupayBasketGuid] [uniqueidentifier] not null,
     [PaySecupayInitGuid] [uniqueidentifier] not null,
-    [ArticleNumber] [nvarchar](100) not null,
-    [Name] [nvarchar](100) null,
-    [Model] [nvarchar](100) null,
+    [ArticleNumber] [nvarchar](200) not null,
+    [Name] [nvarchar](200) null,
+    [Model] [nvarchar](200) null,
     [Ean] [nvarchar](100) null,
     [Quantity] [nvarchar](50) null,
     [Price] [nvarchar](50) null,

@@ -11,9 +11,9 @@ namespace pay.secupay.Model.Mapping
             HasRequired(t => t.Init).WithMany(t => t.Basket).HasForeignKey(t=>t.PaySecupayInitGuid);
             
             // Properties
-            Property(t => t.ArticleNumber).IsRequired().HasMaxLength(100);
-            Property(t => t.Name).HasMaxLength(100);
-            Property(t => t.Model).HasMaxLength(100);
+            Property(t => t.ArticleNumber).IsRequired().HasMaxLength(200);
+            Property(t => t.Name).HasMaxLength(200);
+            Property(t => t.Model).HasMaxLength(200);
             Property(t => t.Ean).HasMaxLength(100);
             Property(t => t.Quantity).HasMaxLength(50);
             Property(t => t.Price).HasMaxLength(50);
