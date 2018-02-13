@@ -166,7 +166,7 @@
             secupayStatus.ResponseDemo = response.Data.Demo;
             secupayStatus.ResponseTransId = response.Data.TransId;
             secupayStatus.ResponseAmount = response.Data.Amount;
-            secupayStatus.ResponseOpt = response.Data.Opt;
+            secupayStatus.ResponseOpt = "";//response.Data.Opt;
 
             secupayStatus.Status = response.Status;
             secupayStatus.Errors = response.Errors;
