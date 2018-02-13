@@ -26,7 +26,22 @@
         [DataMember(Name = "amount")]
         public long Amount { get; set; }
 
-        [DataMember(Name = "opt")]
-        public string Opt { get; set; }
+        //[DataMember(Name = "opt")]
+        //public Opt Opt { get; set; }
+    }
+
+    public class Opt
+    {
+        [DataMember(Name = "masked_payment_data")]
+        public MaskedPaymentData Masked_payment_data { get; set; }
+    }
+
+    public class MaskedPaymentData
+    {
+        [DataMember(Name = "purpose")]
+        public string Purpose { get; set; }
+
+        [DataMember(Name = "data")]
+        public string Data { get; set; }
     }
 }
